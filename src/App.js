@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
 import Contact from './components/Contacts';
+import PersonList from './components/Contact-List';
 
 
 function App() {
   return (
     <div className="">
-      <Contact image ="https://randomuser.me/api/portraits/women/76.jpg"
+     {/* <Contact image ="https://randomuser.me/api/portraits/women/76.jpg"
                name ="Alain Souchon"
                
                online />
@@ -18,7 +19,8 @@ function App() {
       <Contact image = "https://randomuser.me/api/portraits/women/72.jpg"
                name ="Amy Molette"
                
-               online />
+  online />*/}
+    <PersonList />
       
     </div>
   );
