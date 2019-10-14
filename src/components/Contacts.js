@@ -3,21 +3,44 @@ import './Contact.css';
 
 
 
-function Contact (props){
+class Contact extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    online: (this.props.status === "online" ? true : false)
+
+  };
+}
+
+  render(){
     return(
-<div className="Contact">
-    <img  className="avatar"src={props.image}/>
-    <div>
-      <div className="name">{props.name}</div>
+      <div className="Contact">
+        <img  className="avatar"src={this.props.image}/>
+      <div>
+      <div className="name">{this.props.name}</div>
       <div className="status">
-        <p className ="status-text">{props.quote}</p>
-        <span className={props.status==="online" ? "status-online" : "status-offline"}></span>
-        <span className="status-text">{props.status==="online" ? "online" : "offline"}</span>
+        <p className ="status-text">{this.props.quote}</p>
+        
+        <span id="pastille couleur" 
+         className={this.state.online ? "status-online" : "status-offline"}
+         
+         onClick={event => {const isOffLine = !this.state.online;
+         this.setState({online : isOffLine});
+        }} 
+        >
+        </span>
+
+        <span id="online-offline"
+      className="status-text">
+      {this.state.online ? "online" : "offline"}
+      
+      </span>
         
       </div>
     </div>
   </div>
-    )
+    );
+}
 }
 
 
